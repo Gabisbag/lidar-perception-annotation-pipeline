@@ -154,7 +154,8 @@ Class distribution graphs
 nuScenes / nuScenes-mini
 SemanticKITTI format
 
-(Provide download link instead of uploading full dataset)
+https://www.nuscenes.org/nuscenes
+<img width="1766" height="706" alt="image" src="https://github.com/user-attachments/assets/a3b4b1dd-0591-4610-9860-ff2b8f8a3e1a" />
 
 👨‍💻 Authors
 Gabriel Tan Jun Cong
