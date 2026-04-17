@@ -13,6 +13,7 @@ This project proposes a streamlined annotation and validation workflow, combined
 
 <img width="631" height="481" alt="image" src="https://github.com/user-attachments/assets/0039dd6e-99b6-4097-89e5-f862f4750ccb" />
 
+
 🎯 Objectives
 Develop an efficient LiDAR annotation and review workflow
 Automate dataset validation using Python
@@ -33,7 +34,11 @@ J. Behley Labeller (point cloud annotation)
 BasicAI (annotation review platform)
 Python (NumPy, data analysis scripts)
 YOLO-based detection models
+
+
 🛠️ Methodology
+
+
 1. Annotation & Review
 Annotated LiDAR point clouds using tile-based segmentation
 Reviewed annotations using structured guidelines
@@ -43,10 +48,11 @@ Misclassified labels
 Missing detections
 
 📌 Example issues:
-
 Duplicate pedestrian annotations
 Incorrect visibility attributes
 Missed detections due to camera blind spots
+
+
 2. Automated Validation
 
 Custom Python scripts were developed to:
@@ -57,44 +63,47 @@ Generate CSV summaries for analysis
 
 This reduces reliance on manual inspection and improves consistency.
 
+
 3. Class Imbalance Analysis
 
 Dataset showed long-tail distribution:
-
 Dominant classes: car, adult
 Rare classes: police_officer, child, debris
 
-This imbalance leads to:
+<img width="896" height="445" alt="image" src="https://github.com/user-attachments/assets/3e2871c3-d5e8-40ab-97bb-ea017f0b8354" />
+<img width="914" height="454" alt="image" src="https://github.com/user-attachments/assets/6a9ac6f7-8211-414f-a36e-c5f98dcd0a4d" />
 
+This imbalance leads to:
 Poor detection of rare but critical objects
 Biased model performance
+
+Baseline Model
+Precision: 0.79
+Recall: 0.55
+mAP@0.5: 0.63
+<img width="714" height="416" alt="image" src="https://github.com/user-attachments/assets/85af3e83-75ab-4692-8d82-dbbf00610ce8" />
+Problem:
+High precision, low recall → missing objects
+
+
 4. Mitigation Strategies
+
 A. Focal Loss (Algorithm-Level)
 Designed to focus on hard examples
 Result:
 Slight precision increase
 Overall performance decreased
 Poor improvement for rare classes
+<img width="710" height="416" alt="image" src="https://github.com/user-attachments/assets/7f285432-5c14-40d8-974c-12d88d52a599" />
+
 B. Targeted Augmentation (Data-Level)
 Increased samples for minority classes
 Controlled augmentation intensity per class
-
 Result:
-
 Dataset size increased by ~32%
 Significant boost in minority class representation
-📊 Results
-Baseline Model
-Precision: 0.79
-Recall: 0.55
-mAP@0.5: 0.63
+<img width="719" height="417" alt="image" src="https://github.com/user-attachments/assets/e72859cb-f495-451a-9652-88901d9ec877" />
 
-Problem:
-
-High precision, low recall → missing objects
-Focal Loss
-Slightly higher precision
-Lower recall and mAP
 
 ❌ Conclusion:
 Focal loss alone does not solve class imbalance effectively
@@ -106,7 +115,6 @@ mAP@0.5: 0.74
 mAP@0.5:0.95: 0.52
 
 ✅ Improvements:
-
 Better detection coverage
 Stronger localisation
 Significant gains for minority classes
