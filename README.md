@@ -11,8 +11,7 @@ Highly inconsistent
 
 This project proposes a streamlined annotation and validation workflow, combined with class imbalance mitigation techniques, to produce more reliable training datasets for perception models.
 
-
-
+<img width="631" height="481" alt="image" src="https://github.com/user-attachments/assets/0039dd6e-99b6-4097-89e5-f862f4750ccb" />
 
 🎯 Objectives
 Develop an efficient LiDAR annotation and review workflow
